@@ -1,0 +1,2 @@
+call_date,consumer,endpoint,calls,ok_calls,error_calls,instability_errors,retry_calls,p50_ms,max_ms,total_rows,first_call_at,last_call_at
+2026-06-04,mega-loja,/products,1,1,0,0,0,8765.0,8765,21338,2026-06-04T05:43:06.465098Z,2026-06-04T05:43:06.465098Z

@@ -1,0 +1,1 @@
+{"consumer": "mega-loja", "source": "artsoft_products_sync.py@mega-loja-sync", "endpoint": "/products", "http_method": "GET", "started_at": "2026-06-04T05:43:06.465098Z", "ended_at": "2026-06-04T05:43:15.230640Z", "duration_ms": 8765, "http_status": 200, "ok": true, "rows_returned": 21338, "response_bytes": 7160641, "attempt_no": 1, "error_class": null, "error_text": null}
