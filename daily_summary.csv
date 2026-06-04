@@ -1,2 +1,4 @@
 call_date,consumer,endpoint,calls,ok_calls,error_calls,instability_errors,retry_calls,p50_ms,max_ms,total_rows,first_call_at,last_call_at
-2026-06-04,mega-loja,/products,1,1,0,0,0,8765.0,8765,21338,2026-06-04T05:43:06.465098Z,2026-06-04T05:43:06.465098Z
+2026-06-04,mega-loja,/documents,291,291,0,0,0,2378.0,12745,39213,2026-06-04T06:00:12.341768Z,2026-06-04T06:01:49.652317Z
+2026-06-04,mega-loja,/partners/customers,1,1,0,0,0,8084.0,8084,33463,2026-06-04T06:00:01.983775Z,2026-06-04T06:00:01.983775Z
+2026-06-04,mega-loja,/products,2,2,0,0,0,7511.0,8765,42676,2026-06-04T05:43:06.465098Z,2026-06-04T06:01:51.850514Z
