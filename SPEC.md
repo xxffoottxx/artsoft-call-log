@@ -2,7 +2,7 @@
 
 **Status:** reference implementation live on the Mega Loja side · proposed for Artsoft to mirror
 **Author:** Descomplicador (Mega Loja Borja Reis integration)
-**Last updated:** 2026-06-04
+**Last updated:** 2026-10-17 (§6, store-server counts)
 
 ---
 
@@ -164,3 +164,26 @@ immediately — and if it doesn't, the consumer's log clears them just as fast.
 Implementation effort on the Artsoft side is small: log the §1 fields per
 inbound call at the API gateway, append to a JSON-Lines file or table, publish
 daily. Any language, any store — the format is the only contract.
+
+---
+
+## 6. The store's own server — published as counts (since 2026-10-17)
+
+Our integration also calls the Artsoft server inside the shop (XMLServer on
+ports 2600 and 2601, product service on port 3000). Each of those calls is
+recorded on our side with the same fields as §1 plus the port, the service name
+and whether it was a write. Because the requests carry customer and document
+numbers, we publish only the daily counts:
+
+`caixa_resumo.csv` — one row per UTC day and port:
+
+| Column               | Meaning |
+|----------------------|---------|
+| `data`               | UTC day (same day boundaries as the `.jsonl` files) |
+| `porta`              | 2600 Materiais · 2601 Mobiliário · 3000 product service |
+| `leituras`           | read calls |
+| `escritas`           | write calls (made with the store management's authorisation) |
+| `erros`              | calls with no valid answer (timeout, no handshake, HTTP error) |
+| `em_horario_da_loja` | calls made inside that day's opening hours, from the shop's own calendar |
+
+Each day's `-resumo.md` carries the same counts in words.
